@@ -1,2 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&family=Nunito&family=Zen+Antique&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Nunito',sans-serif;
+}
+
+html{
+    font-size: 62.5%; /*pentru a face ca un rem sa fie 10px in loc de 16px*/
+}
+
+.header{
+    width: 100%;
+    height:100vh;
+    position: relative;
+}
+.image-wrapper{
+    width: 100%;
+    height:100vh;
+    overflow: hidden;  /*aici am pus hidden pentru annu mai avea barele de scroll cand se facea animatia (fara el nu mergea)*/
+    background-color: rgba(0,0,0,0.8); /*0.8 este opacitatea*/
+}
+.image-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /*pentru a face ca imaginea sa incapa perfect in ecran */
+    opacity:0.5;
+    animation:scale 20s;
+}
+
+@keyframes scale {
+    0%{
+        transform:scale(1.3);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+.banner{
+    position: absolute;
+    top:30%;
+    left:15%;
+}
+
+.banner h1{
+    font-family:'Nunito', serif;
+    font-size: 8rem;
+    font-weight: 400;
+    color: whitesmoke;
+    width:53%;
+    line-height: 8rem;
+    letter-spacing: 0.2rem;
+    text-shadow: 0.4rem 0.5rem 0.6rem black ;  /*ultima proprietate este pentru opacitate*/
+}
+
+.banner p{
+    font-family: 'Josefin Slab', serif;
+    color:white;
+    font-size: 3.2rem;
+    width:70%;
+    letter-spacing: 0.15rem;
+    margin-bottom:5rem;
+    margin-top: 1rem;
+    text-shadow: 0.1rem 0.1rem 0.5rem darkslategrey;
+    font-weight: 500;
+
+}
+
+.banner button{
+    width:25rem;
+    height:5rem;
+    background-color: #c29525;
+    border: none;
+    font-family: 'Nunito';
+    font-size:2rem;
+    text-transform: uppercase;
+    color:white;
+    text-shadow:0 0.2rem 0.4rem rgba(0,0,0,0.5);
+    box-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.5);  /*pentru a face efectul de umbra pe langa buton*/
+    cursor: pointer;
+}
+
+/*aici incepe partae de hamburger menu ------------------------------------------------------------*/
+
+
+.hamburger-menu{
+    width:3rem;
+    height:3rem;
+    /* background-color:red; */
+    position: fixed;
+    top: 5rem;
+    right:5rem;
+    z-index:200;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    cursor: pointer;
+}
+.line{
+    width: 100%;
+    height:0.2rem;
+    background-color:white;
+    box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.3);
+    
+}
