@@ -18,6 +18,8 @@ html{
     width: 100%;
     height:100vh;
     position: relative;
+    perspective: 100rem;  /*adaugata la final pentru a avea o perspectiva 3D pentru user*/
+    overflow: hidden;
 }
 .image-wrapper{
     width: 100%;
@@ -30,12 +32,13 @@ html{
     height: 100%;
     object-fit: cover;  /*pentru a face ca imaginea sa incapa perfect in ecran */
     opacity:0.5;
-    animation:scale 20s;
+    animation:transformareBack 20s; /*numele si durata animatiei  -merge pe orice element-*/
 }
 
-@keyframes scale {
+/*aici am facut o animatie care la 0% sa aiba dimenisunea 1.3 din original, iar la 100% sa aiba dinmenisunea intreaga*/
+@keyframes transformareBack {
     0%{
-        transform:scale(1.3);
+        transform:scale(1.3);   /*scale este functia care transforma efectiv imaginea*/
     }
     100%{
         transform:scale(1);
@@ -57,6 +60,9 @@ html{
     line-height: 8rem;
     letter-spacing: 0.2rem;
     text-shadow: 0.4rem 0.5rem 0.6rem black ;  /*ultima proprietate este pentru opacitate*/
+    opacity: 0;/*am adaugat dupa ce am pus keyframes pentrua  face o animatie */
+    animation: moveBanner 1s 0.5s forwards;  /*in ordine: numele, durata si deelay-ul animatiei, pentru a ramane vizibila si a nu disparea dupa ce este gata animatia */
+    
 }
 
 .banner p{
@@ -69,7 +75,8 @@ html{
     margin-top: 1rem;
     text-shadow: 0.1rem 0.1rem 0.5rem darkslategrey;
     font-weight: 500;
-
+    opacity: 0;/*am adaugat dupa ce am pus keyframes pentrua  face o animatie */
+    animation: moveBanner 1s 0.7s forwards;  /*in ordine: numele, durata si deelay-ul animatiei*/
 }
 
 .banner button{
@@ -84,6 +91,24 @@ html{
     text-shadow:0 0.2rem 0.4rem rgba(0,0,0,0.5);
     box-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.5);  /*pentru a face efectul de umbra pe langa buton*/
     cursor: pointer;
+    transition: all 1s ease;
+    opacity: 0;  /*am adaugat dupa ce am pus keyframes pentrua  face o animatie */
+    animation: moveBanner 1s 0.9s forwards;  /*in ordine: numele, durata si deelay-ul animatiei*/
+}
+
+@keyframes moveBanner {
+    0%{
+        transform: translateY(35rem) rotateY(-20deg);
+    }
+    100%{
+        transform: translateY(0) rotateY(0);
+        opacity: 1;
+    }
+}
+
+.banner button:hover{
+    transform: scale(1.05);
+    border-radius: 1rem;
 }
 
 /*aici incepe partae de hamburger menu ------------------------------------------------------------*/
