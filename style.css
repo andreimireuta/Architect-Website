@@ -444,6 +444,69 @@ html{
 }
 
 
+/*Aici incepe partea de contact section ----------------------------------------------------------------------------*/
+
+.contact{
+    width: 100%;
+    height:100vh;
+    background-color:#272727;
+    display: flex;
+    align-items: center;  /*pentru a pune sus jos pe centru*/
+    justify-content:center;  /*pentru a pune stanga dreapta pe centru*/
+    
+
+}
+
+.contact-wrapper{
+    width: 60%;
+    height:75rem;
+    display: flex;
+    background-color: #fff;
+    box-shadow: 0 3rem 7rem rgba(0,0,0,0.6);
+}
+
+.left-side{
+    width:35%;
+    background:linear-gradient(rgba(15,15,15,0.6),
+                 rgba(82,25,32,0.9)/*,rgba(255,100,30,0.6)*/), 
+                url(images/contact-bg.jpg),
+                center no-repeat;
+    background-size:cover;
+
+}
+.right-side{
+    width:65%;
+    background-color: #eee;
+    padding:3rem 10rem 10rem 10rem;
+}
+
+.contact-heading{
+    font-family: 'Baloo Da 2', serif;
+    font-size: 6rem;
+    font-weight: 300;
+    text-align: center;
+    color: #272727;
+    text-shadow: 0 0.3rem 0.3rem rgba(0,0,0,0.5);
+}
+
+.right-side form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.field{
+    width:45rem;
+    background-color: transparent;
+    border:none;
+    border-bottom: 0.2rem dashed #636363;
+    margin: 3rem 0;
+    padding: 1rem 1rem 1rem 0;
+    font-family: 'Nunito',sans-serif;
+    color:#4b4b4b;
+}
+
 
 
 
